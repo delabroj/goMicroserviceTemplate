@@ -1,9 +1,11 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"log"
+	"net/http"
+)
 
 func main() {
-	app := gin.Default()
-	app.GET("/status", getStatus)
-	app.Run(":8000")
+	http.HandleFunc("/status", status)
+	log.Fatal(http.ListenAndServe(":8000", nil))
 }

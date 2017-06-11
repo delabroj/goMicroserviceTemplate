@@ -1,8 +1,13 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import "net/http"
 
-func getStatus(c *gin.Context) {
-	content := gin.H{"status": "ok"}
-	c.IndentedJSON(200, content)
+func status(w http.ResponseWriter, r *http.Request) {
+	switch r.Method {
+	case "GET":
+		w.Header().Set("Content-Type", "application/json")
+		w.Write([]byte(`{"status": "ok"}`))
+	default:
+		http.Error(w, http.StatusText(http.StatusNotFound), http.StatusNotFound)
+	}
 }
