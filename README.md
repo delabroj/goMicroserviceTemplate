@@ -58,7 +58,5 @@ The destination machine must have read access to the S3 bucket and object prefix
 
 Returns
 ```js
-{
-    "status": "ok"
-}
+{"status": "ok"}
 ```
