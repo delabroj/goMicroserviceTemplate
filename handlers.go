@@ -34,7 +34,7 @@ func logRequest(next http.Handler) http.Handler {
 		for k, v := range rec.Header() {
 			w.Header()[k] = v
 		}
-		log.Println(r.Method, r.URL, rec.Code)
+		log.Println(r.Method, r.URL.Path, rec.Code)
 		w.Write(rec.Body.Bytes())
 	})
 }
