@@ -3,6 +3,7 @@
 A go microservice that uses net/http and upstart with two deploy options: directly to target VM via ssh (for small deployments), or to S3 then down to VMs via pull an automated service (for large deployments).
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/delabroj/goMicroserviceTemplate)](https://goreportcard.com/report/github.com/delabroj/goMicroserviceTemplate)
+[![Build Status](https://travis-ci.org/delabroj/goMicroserviceTemplate.svg?branch=master)](https://travis-ci.org/delabroj/goMicroserviceTemplate)
 
 ## Deployment
 
